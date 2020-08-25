@@ -1,0 +1,32 @@
+plugins {
+    id "org.springframework.boot" version "2.2.6.RELEASE"
+}
+
+
+dependencies {
+
+    implementation project(':core')
+/*    runtimeOnly project(':api')*/
+
+    implementation 'org.springframework.boot:spring-boot-starter-quartz'
+    implementation 'com.zaxxer:HikariCP'
+    implementation 'org.springframework.boot:spring-boot-starter-amqp'
+    implementation 'org.postgresql:postgresql'
+    implementation 'org.springframework:spring-jdbc'
+    implementation 'javax.validation:validation-api'
+/*    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'*/
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'junit' // excluding junit 4
+    }
+    testImplementation 'org.springframework.amqp:spring-rabbit-test'
+
+    integrationTestImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'junit' // excluding junit 4
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+}

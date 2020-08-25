@@ -1,0 +1,29 @@
+dependencies {
+   
+
+    implementation 'org.springframework:spring-core'
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+    implementation 'javax.annotation:javax.annotation-api'
+    implementation 'javax.validation:validation-api'
+    implementation 'org.slf4j:jcl-over-slf4j'
+    implementation 'org.slf4j:slf4j-api'
+
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine'
+    testImplementation 'org.mockito:mockito-core'
+    testImplementation 'org.mockito:mockito-junit-jupiter'
+    testImplementation 'org.assertj:assertj-core'
+
+    integrationTestImplementation 'org.apache.commons:commons-email'
+    integrationTestImplementation 'com.icegreen:greenmail'
+    integrationTestImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    integrationTest {
+        useJUnitPlatform()
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+}

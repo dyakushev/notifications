@@ -1,0 +1,28 @@
+dependencies {
+
+    implementation project(':events')
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+
+    integrationTestImplementation 'org.junit.jupiter:junit-jupiter-engine'
+    integrationTestImplementation 'org.junit.jupiter:junit-jupiter-api'
+    integrationTestImplementation group: 'org.junit.platform', name: 'junit-platform-launcher'
+
+    integrationTestImplementation 'org.mockito:mockito-core'
+    integrationTestImplementation 'org.mockito:mockito-junit-jupiter'
+    integrationTestImplementation 'org.assertj:assertj-core'
+
+
+    integrationTestImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+
+    integrationTest {
+
+        useJUnitPlatform() {
+        }
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}

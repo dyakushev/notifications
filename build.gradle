@@ -1,0 +1,79 @@
+plugins {
+    id "io.spring.dependency-management" version "1.0.9.RELEASE"
+    id "io.freefair.lombok" version "5.0.0"
+    id "org.jetbrains.gradle.plugin.idea-ext" version "0.7"
+}
+
+
+subprojects {
+    configurations.all {
+        exclude group: "commons-logging", module: "commons-logging"
+    }
+    group 'ru.bia.traffic.notifications'
+    version '1.0-SNAPSHOT'
+
+
+    apply plugin: 'java'
+    apply plugin: 'java-library'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'io.freefair.lombok'
+    apply from: "$rootDir/integration-test.gradle"
+
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    ext {
+        springVersion = '5.2.5.RELEASE'
+        springBootVersion = '2.2.6.RELEASE'
+    }
+
+
+    dependencyManagement {
+        dependencies {
+            dependency "org.springframework:spring-core:$springVersion"
+            dependency "org.springframework:spring-context:$springVersion"
+            dependency "org.springframework:spring-context-support:$springVersion"
+            dependency "org.springframework:spring-jdbc:$springVersion"
+
+            dependency "org.springframework.boot:spring-boot-dependencies:$springBootVersion"
+            dependency "org.springframework.boot:spring-boot-starter-mail:$springBootVersion"
+            dependency "org.springframework.boot:spring-boot-starter-quartz:$springBootVersion"
+            dependency "org.springframework.boot:spring-boot-starter-amqp:$springBootVersion"
+
+            dependency("org.springframework.boot:spring-boot-starter-test:$springBootVersion") {
+                exclude "org.junit.vintage:junit-vintage-engine"
+            }
+            dependency "org.springframework.amqp:spring-rabbit-test:$springBootVersion"
+            dependency "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+
+
+            dependency 'javax.annotation:javax.annotation-api:1.3.2'
+            dependency 'javax.validation:validation-api:2.0.1.Final'
+            dependency 'org.slf4j:jcl-over-slf4j:1.7.30'
+            dependency 'org.slf4j:slf4j-api:1.7.30'
+
+            dependency 'com.icegreen:greenmail:1.5.13'
+
+
+            dependency 'org.junit.jupiter:junit-jupiter-engine:5.6.2'
+            dependency 'org.junit.jupiter:junit-jupiter-api:5.6.2'
+
+
+
+            dependency 'org.mockito:mockito-core:3.3.3'
+            dependency 'org.mockito:mockito-junit-jupiter:3.3.3'
+            dependency 'org.assertj:assertj-core:3.15.0'
+            dependency 'org.apache.commons:commons-email:1.5'
+            dependency 'com.zaxxer:HikariCP:3.4.3'
+            dependency 'org.postgresql:postgresql:42.2.12'
+
+
+        }
+    }
+}
+
+
+
+

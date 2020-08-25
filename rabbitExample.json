@@ -1,0 +1,8 @@
+{
+  "type" :"email",
+  "recipients" : [
+    "yakushev.den@gmail.com"
+  ],
+  "subject":"testsubject",
+  "content":"testcontent"
+}

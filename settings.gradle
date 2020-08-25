@@ -1,0 +1,8 @@
+rootProject.name = 'notifications'
+include 'core'
+include 'api'
+include 'events'
+
+
+
+

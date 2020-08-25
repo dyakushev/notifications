@@ -1,0 +1,43 @@
+spring:
+  mail:
+    host: ${SPRING_MAIL_HOST}
+    port: ${SPRING_MAIL_PORT}
+    username: ${SPRING_MAIL_USERNAME}
+    password: ${SPRING_MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+  quartz:
+    job-store-type: jdbc
+    jdbc:
+      initialize-schema: always
+    properties:
+      org:
+        quartz:
+          scheduler:
+            instanceId: auto
+          jobStore:
+            class: org.quartz.impl.jdbcjobstore.JobStoreTX
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
+
+
+  rabbitmq:
+    host: ${SPRING_RABBIT_HOST}
+    port: ${SPRING_RABBIT_POST}
+
+app:
+  datasource:
+    quartz:
+      url: ${APP_DATASOURCE_QUARTZ_URL}
+      username: ${APP_DATASOURCE_QUARTZ_USERNAME}
+      password: ${APP_DATASOURCE_QUARTZ_PASSWORD}
+
+rabbit:
+  queue: ${RABBIT_QUEUE}
+  exchange: ${RABBIT_EXCHANGE}
+  routing-key: ${RABBIT_ROUTING_KEY}
+  jobRepeatIntervalSeconds: ${RABBIT_JOB_REPEAT_INTERVAL_SECONDS}

@@ -1,0 +1,16 @@
+
+t
+java:S1192@"WDefine a constant instead of duplicating this literal "/notifications/api/add" 3 times.(‰ÈäÑ8ã¡…ßß.
+k
+java:S30082"NRename this field "UID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ï‰‘∞8ã¡…ßß.
+o	java:S100<"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰¯ÔÑ˘ˇˇˇˇ8ã¡…ßß.
+c
+java:S1192@"FDefine a constant instead of duplicating this literal "utf-8" 3 times.(‰ÈäÑ8ã¡…ßß.
+q
+java:S3008""ORename this field "JSON" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒø˘÷˝ˇˇˇˇ8ã¡…ßß.
+j	java:S100W"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óˆ√ˇ8ã¡…ßß.
+m
+java:S3008*"PRename this field "JSON2" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óÏúœ8›„è©ß.
+o	java:S100J"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÂÛÅ”¸ˇˇˇˇ8ã¡…ßß.
+n
+java:S1192@"QDefine a constant instead of duplicating this literal "application/json" 6 times.(‰ÈäÑ8ã¡…ßß.
